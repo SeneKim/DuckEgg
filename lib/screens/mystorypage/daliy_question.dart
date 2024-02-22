@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:hummingbird/components/question_list_component.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:hummingbird/screens/mystorypage/daliy_question_subpage/daliy_question_subpage1.dart';
+import 'package:hummingbird/screens/mystorypage/daliy_question_subpage/daliy_question_subpage2.dart';
+import 'package:hummingbird/screens/mystorypage/daliy_question_subpage/daliy_question_subpage3.dart';
+import 'package:hummingbird/screens/mystorypage/daliy_question_subpage/daliy_question_subpage4.dart';
 
 class DailyQuestionPage extends StatelessWidget {
   const DailyQuestionPage({super.key});
@@ -219,10 +223,10 @@ class DailyQuestionPage extends StatelessWidget {
           Positioned(
               left: 15.w,
               top: 380.h,
-              child: const Center(
+              child: Center(
                 child: Column(
                   children: [
-                    SizedBox(
+                    const SizedBox(
                       height: 15,
                     ),
                     ////////////////////////////////////////////////////////////////////////////////////////
@@ -232,24 +236,44 @@ class DailyQuestionPage extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
-                        Qlist(
-                          questionNumber: 4,
-                          question: "오늘 속상한 일이 있었나요?",
+                        InkWell(
+                          onTap: () => toDailyQuesSub1(context),
+                          borderRadius:
+                              const BorderRadius.all(Radius.circular(25)),
+                          child: const Qlist(
+                            questionNumber: 4,
+                            question: "오늘 속상한 일이 있었나요?",
+                          ),
                         ),
-                        SizedBox(height: 10),
-                        Qlist(
-                          questionNumber: 3,
-                          question: "오늘 먹었던 것 중에 가장 맛있는..",
+                        const SizedBox(height: 10),
+                        InkWell(
+                          onTap: () => toDailyQuesSub1(context),
+                          borderRadius:
+                              const BorderRadius.all(Radius.circular(25)),
+                          child: const Qlist(
+                            questionNumber: 3,
+                            question: "오늘 먹었던 것 중에 가장 맛있는..",
+                          ),
                         ),
-                        SizedBox(height: 10),
-                        Qlist(
-                          questionNumber: 2,
-                          question: "오늘 어떤 순간이 가장 행복했나..",
+                        const SizedBox(height: 10),
+                        InkWell(
+                          onTap: () => toDailyQuesSub1(context),
+                          borderRadius:
+                              const BorderRadius.all(Radius.circular(25)),
+                          child: const Qlist(
+                            questionNumber: 2,
+                            question: "오늘 어떤 순간이 가장 행복했나..",
+                          ),
                         ),
-                        SizedBox(height: 10),
-                        Qlist(
-                          questionNumber: 1,
-                          question: "오늘은 어떤 하루였나요?",
+                        const SizedBox(height: 10),
+                        InkWell(
+                          onTap: () => toDailyQuesSub1(context),
+                          borderRadius:
+                              const BorderRadius.all(Radius.circular(25)),
+                          child: const Qlist(
+                            questionNumber: 1,
+                            question: "오늘은 어떤 하루였나요?",
+                          ),
                         ),
                       ],
                     )
@@ -260,4 +284,25 @@ class DailyQuestionPage extends StatelessWidget {
       ),
     );
   }
+}
+
+// 하드 코딩으로 각 page 이동을 구현
+void toDailyQuesSub1(BuildContext context) {
+  Navigator.push(context,
+      MaterialPageRoute(builder: (context) => const DailyQuestionSub1()));
+}
+
+void toDailyQuesSub2(BuildContext context) {
+  Navigator.push(context,
+      MaterialPageRoute(builder: (context) => const DailyQuestionSub2()));
+}
+
+void toDailyQuesSub3(BuildContext context) {
+  Navigator.push(context,
+      MaterialPageRoute(builder: (context) => const DailyQuestionSub3()));
+}
+
+void toDailyQuesSub4(BuildContext context) {
+  Navigator.push(context,
+      MaterialPageRoute(builder: (context) => const DailyQuestionSub4()));
 }

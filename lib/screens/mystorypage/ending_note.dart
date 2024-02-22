@@ -68,7 +68,7 @@ class EndingNotePage extends StatelessWidget {
                     shadows: [
                       Shadow(
                         blurRadius: 5.0, // shadow blur
-                        color: Colors.grey, // shadow color
+                        color: Colors.black26, // shadow color
                         offset: Offset(0, 3.0), // how much shadow will be shown
                       ),
                     ],
@@ -140,12 +140,10 @@ class EndingNotePage extends StatelessWidget {
               height: 36.w,
               width: 90.h,
               alignment: Alignment.center,
-              decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(20),
-                  color: const Color(0xFFEEF1FF),
-                  image: const DecorationImage(
-                    image: AssetImage("assets/images/plus.png"),
-                  )),
+              decoration: const BoxDecoration(
+                  image: DecorationImage(
+                image: AssetImage("assets/images/plus.png"),
+              )),
             ),
           ),
           /////////////////////////////////////////////////////////////////////////////////////////////////
