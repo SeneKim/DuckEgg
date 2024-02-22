@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hummingbird/navigation/app.dart';
+import 'package:hummingbird/provider/provider.dart';
+import 'package:provider/provider.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(MultiProvider(
+      providers: [ChangeNotifierProvider(create: (create) => GlobalStore())],
+      child: const MyApp()));
 }
 
 class MyApp extends StatelessWidget {
