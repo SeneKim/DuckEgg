@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hummingbird/screens/mystorypage/mystoryhome.dart';
 
 class Qlist extends StatelessWidget {
   final num questionNumber;
@@ -15,7 +16,7 @@ class Qlist extends StatelessWidget {
     return Material(
       color: Colors.transparent,
       child: InkWell(
-          onTap: () {},
+          onTap: () => toHomm(context),
           borderRadius: BorderRadius.circular(20),
           child: Container(
             height: 45,
@@ -71,4 +72,11 @@ class Qlist extends StatelessWidget {
           )),
     );
   }
+}
+
+// 임시로 연결해놓은 것!
+// 각 페이지 구축된다면 바꿀겁니동~
+void toHomm(BuildContext context) {
+  Navigator.push(context,
+      MaterialPageRoute(builder: (context) => const MyStoryHomePage()));
 }

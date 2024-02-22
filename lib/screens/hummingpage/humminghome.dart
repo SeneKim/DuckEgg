@@ -131,6 +131,9 @@ class HummingHomPage extends StatelessWidget {
                               height: 0,
                             ),
                           ),
+                          SizedBox(
+                            height: 8,
+                          ),
                           Text(
                             '그리운 사람\n보고싶은 사람\n만나고 싶은 사람 의 목소리를 들을 수 있어요',
                             textAlign: TextAlign.center,
@@ -143,7 +146,7 @@ class HummingHomPage extends StatelessWidget {
                             ),
                           ),
                           SizedBox(
-                            height: 50,
+                            height: 40,
                           ),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.center,

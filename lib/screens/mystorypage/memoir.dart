@@ -10,16 +10,21 @@ class MemoirPage extends StatelessWidget {
       children: [
         Container(
           width: 360.w,
-          height: 745.75.h,
+          height: 740.75.h,
           clipBehavior: Clip.antiAlias,
-          decoration: ShapeDecoration(
+          decoration: const ShapeDecoration(
             color: Colors.white,
             shape: RoundedRectangleBorder(
-              side: const BorderSide(width: 2, color: Color(0xFFEDEEFF)),
+              side: BorderSide(width: 2, color: Color(0xFFEDEEFF)),
             ),
           ),
           child: Stack(
             children: [
+              Positioned(
+                left: 20.w,
+                top: 40.h,
+                child: Image.asset("assets/images/mainlogo.png"),
+              ),
               Positioned(
                 left: -44.w,
                 top: 811.h,
@@ -116,27 +121,50 @@ class MemoirPage extends StatelessWidget {
                   width: 320.w,
                   height: 260.h,
                   decoration: BoxDecoration(
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.grey.withOpacity(0.7),
+                        spreadRadius: 0,
+                        blurRadius: 5,
+                        offset:
+                            const Offset(0, 5), // changes position of shadow
+                      ),
+                    ],
                     color: Colors.white,
-                    border: Border.all(color: Colors.black),
+                    border: Border.all(
+                        color: const Color(0xFF321C71).withOpacity(0.4),
+                        width: 2.5),
                     borderRadius: BorderRadius.circular(8),
                   ),
                   child: const Column(
                       mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text(
-                          "Q. 당신은 10대에 어떤 사람이었나요?",
-                          style: TextStyle(
-                            fontSize: 15,
-                            color: Color(0xFF321C71),
+                        SizedBox(
+                          height: 10,
+                        ),
+                        Padding(
+                          padding:
+                              EdgeInsets.symmetric(horizontal: 20, vertical: 5),
+                          child: Text(
+                            "Q. 당신은 10대에 어떤 사람이었나요?",
+                            style: TextStyle(
+                              fontSize: 18,
+                              fontWeight: FontWeight.bold,
+                              fontFamily: "Inter",
+                              color: Color(0xFF321C71),
+                            ),
+                            textAlign: TextAlign.start,
                           ),
                         ),
-                        SizedBox(
-                          height: 4,
-                        ),
-                        Text(
-                          '내 이름 송성근이다.',
-                          style: TextStyle(
-                            fontSize: 10,
+                        Padding(
+                          padding: EdgeInsets.all(20),
+                          child: Text(
+                            '타워의 설경구의 배역에 대한 회고록을 작성해주세요.',
+                            style: TextStyle(
+                              fontWeight: FontWeight.w600,
+                              fontSize: 15,
+                            ),
                           ),
                         )
                       ]),

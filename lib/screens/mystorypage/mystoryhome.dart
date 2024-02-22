@@ -57,26 +57,12 @@ class MyStoryHomePage extends StatelessWidget {
               ),
             ),
           ),
-          Positioned(
-            left: 254.w,
-            top: 48.h,
-            child: Container(
-              width: 63.w,
-              height: 58.h,
-              decoration: ShapeDecoration(
-                color: const Color(0xFFEEF1FF),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(24),
-                ),
-              ),
-            ),
-          ),
 
           ////////////////////////////////////////////////////////////////////////////
           ///// 우리 로고 위치 !!!!!!!! 기억하라
           Positioned(
             left: 6.w,
-            top: 19.h,
+            top: 25.h,
             child: Image.asset('assets/images/mainlogo.png'),
           ),
           Positioned(
@@ -97,7 +83,7 @@ class MyStoryHomePage extends StatelessWidget {
             left: 39.w,
             top: 84.h,
             child: const Text(
-              '윤찬님, 안녕하세요 \n나를 기록해 보아요',
+              '설경구님, 안녕하세요 \n나를 기록해 보아요',
               style: TextStyle(
                 color: Color(0xFF40405C),
                 fontSize: 14,
@@ -291,7 +277,7 @@ class MyStoryHomePage extends StatelessWidget {
                     ),
                   ),
                 ),
-                const SizedBox(height: 5),
+                const SizedBox(height: 8),
                 Material(
                   color: Colors.transparent,
                   child: InkWell(
@@ -345,15 +331,15 @@ class MyStoryHomePage extends StatelessWidget {
             ),
           ),
           Positioned(
-            left: 261.w,
+            left: 255.w,
             top: 49.h,
             child: Container(
-              height: 53.h,
-              width: 50.w,
+              height: 75.h,
+              width: 75.w,
               padding: const EdgeInsets.only(right: 0.25, bottom: 0.11),
               clipBehavior: Clip.antiAlias,
               decoration: const BoxDecoration(),
-              child: Image.asset('assets/images/man.png'),
+              child: Image.asset('assets/images/realman_profile.png'),
             ),
           ),
 

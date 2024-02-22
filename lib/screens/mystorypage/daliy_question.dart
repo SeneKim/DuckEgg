@@ -11,17 +11,17 @@ class DailyQuestionPage extends StatelessWidget {
       width: 360.w,
       height: 745.75.h,
       clipBehavior: Clip.antiAlias,
-      decoration: ShapeDecoration(
+      decoration: const ShapeDecoration(
         color: Colors.white,
         shape: RoundedRectangleBorder(
-          side: const BorderSide(width: 2, color: Color(0xFFEDEEFF)),
+          side: BorderSide(width: 2, color: Color(0xFFEDEEFF)),
         ),
       ),
       child: Stack(
         children: [
           Positioned(
-            left: 6,
-            top: 19,
+            left: 20.w,
+            top: 40.h,
             child: Image.asset("assets/images/mainlogo.png"),
           ),
           Positioned(
@@ -82,7 +82,7 @@ class DailyQuestionPage extends StatelessWidget {
                     top: 146.h,
                     child: SizedBox(
                       width: 100.w,
-                      height: 25.h,
+                      height: 30.h,
                       child: Positioned(
                         left: 24.w,
                         top: 3.h,
@@ -93,7 +93,7 @@ class DailyQuestionPage extends StatelessWidget {
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(30),
                               ),
-                              minimumSize: const Size(100, 10),
+                              minimumSize: const Size(100, 20),
                               alignment: Alignment.center,
                               padding: const EdgeInsets.all(5)),
                           child: const Text(
@@ -101,7 +101,7 @@ class DailyQuestionPage extends StatelessWidget {
                             style: TextStyle(
                               color: Colors.black,
                               fontWeight: FontWeight.bold,
-                              fontSize: 12,
+                              fontSize: 15,
                             ),
                           ),
                         ),
@@ -170,7 +170,7 @@ class DailyQuestionPage extends StatelessWidget {
                     ),
                   ),
                   SizedBox(
-                    height: 50,
+                    height: 60,
                   ),
                   Text(
                     'DAILY QUESTION',
@@ -185,35 +185,18 @@ class DailyQuestionPage extends StatelessWidget {
                     ),
                   ),
                   SizedBox(
-                    height: 40,
+                    height: 20,
                   ),
                   Text(
-                    '어렸을 적 나만의 추억의 장소가 있나요?',
+                    '어렸을 적 나만의 추억의 장소가 있나요?\n그 장소에 대해 알려주세요!',
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       color: Color(0xFF40405C),
                       fontSize: 18,
                       fontFamily: 'Inter',
-                      fontWeight: FontWeight.bold,
-                      height: 0.10,
+                      fontWeight: FontWeight.w900,
+                      height: 1.5,
                     ),
-                  ),
-                  SizedBox(
-                    height: 30,
-                  ),
-                  Text(
-                    '그 장소에 대해 알려주세요!',
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      color: Color(0xFF40405C),
-                      fontSize: 18,
-                      fontFamily: 'Inter',
-                      fontWeight: FontWeight.bold,
-                      height: 0.10,
-                    ),
-                  ),
-                  SizedBox(
-                    height: 120,
                   ),
                 ],
               ),
@@ -221,7 +204,7 @@ class DailyQuestionPage extends StatelessWidget {
           ),
           Positioned(
             left: 20.w,
-            top: 380.h,
+            top: 360.h,
             child: const Text(
               '나의 질문들',
               style: TextStyle(
@@ -235,7 +218,7 @@ class DailyQuestionPage extends StatelessWidget {
           ),
           Positioned(
               left: 15.w,
-              top: 410.h,
+              top: 380.h,
               child: const Center(
                 child: Column(
                   children: [
@@ -251,22 +234,22 @@ class DailyQuestionPage extends StatelessWidget {
                       children: [
                         Qlist(
                           questionNumber: 4,
-                          question: "졸려 뒤지겠다.",
+                          question: "오늘 속상한 일이 있었나요?",
                         ),
                         SizedBox(height: 10),
                         Qlist(
                           questionNumber: 3,
-                          question: "김치 볶음밥 맛있다.",
+                          question: "오늘 먹었던 것 중에 가장 맛있는..",
                         ),
                         SizedBox(height: 10),
                         Qlist(
                           questionNumber: 2,
-                          question: "술이 달아~",
+                          question: "오늘 어떤 순간이 가장 행복했나..",
                         ),
                         SizedBox(height: 10),
                         Qlist(
                           questionNumber: 1,
-                          question: "집에 가고 싶다.",
+                          question: "오늘은 어떤 하루였나요?",
                         ),
                       ],
                     )

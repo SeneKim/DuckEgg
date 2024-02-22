@@ -61,7 +61,7 @@ class Friend extends StatelessWidget {
                         color: Colors.black,
                         fontFamily: "Inter",
                         fontSize: 16,
-                        fontWeight: FontWeight.w100),
+                        fontWeight: FontWeight.w400),
                   ),
                   Text(
                     myInfo,
@@ -69,7 +69,7 @@ class Friend extends StatelessWidget {
                         color: Colors.black45,
                         fontFamily: "Inter",
                         fontSize: 13,
-                        fontWeight: FontWeight.w400),
+                        fontWeight: FontWeight.w300),
                   )
                 ],
               ),
