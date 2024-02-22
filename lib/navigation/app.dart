@@ -28,20 +28,18 @@ class _AppState extends State<App> {
 
   @override
   Widget build(BuildContext context) {
-    return WillPopScope(
-      onWillPop: () async {
+    return PopScope(
+      canPop: false,
+      onPopInvoked: (didPop) async {
         final isFirstRouteInCurrentTab =
             !await _navigatorKeys[_currentTab]!.currentState!.maybePop();
-
         if (isFirstRouteInCurrentTab) {
           if (_currentTab != TabItem.home) {
             _selectTab(TabItem.home);
-            return false;
+            didPop = false;
           }
         }
-
-        /// 네비게이션 바의 첫번째 스크린인 경우, 앱 종료
-        return isFirstRouteInCurrentTab;
+        didPop = isFirstRouteInCurrentTab;
       },
       child: Scaffold(
         body: Stack(
