@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:hummingbird/screens/mystorypage/after_service.dart';
 import 'package:hummingbird/screens/mystorypage/daliy_question.dart';
 import 'package:hummingbird/screens/mystorypage/ending_note.dart';
 import 'package:hummingbird/screens/mystorypage/memoir.dart';
@@ -314,7 +315,7 @@ class MyStoryHomePage extends StatelessWidget {
                 Material(
                   color: Colors.transparent,
                   child: InkWell(
-                    onTap: () {},
+                    onTap: () => toAfterService(context),
                     borderRadius: BorderRadius.circular(20),
                     child: Container(
                       width: 330.w,
@@ -378,4 +379,9 @@ void toEndingNote(BuildContext context) {
 void toMemoir(BuildContext context) {
   Navigator.push(
       context, MaterialPageRoute(builder: (context) => const MemoirPage()));
+}
+
+void toAfterService(BuildContext context) {
+  Navigator.push(
+      context, MaterialPageRoute(builder: (context) => const AfterService()));
 }
