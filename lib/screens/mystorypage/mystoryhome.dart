@@ -4,6 +4,7 @@ import 'package:hummingbird/screens/mystorypage/after_service.dart';
 import 'package:hummingbird/screens/mystorypage/daliy_question.dart';
 import 'package:hummingbird/screens/mystorypage/ending_note.dart';
 import 'package:hummingbird/screens/mystorypage/memoir.dart';
+import 'package:hummingbird/screens/mystorypage/ending_note_subpage.dart';
 
 class MyStoryHomePage extends StatelessWidget {
   const MyStoryHomePage({super.key});
@@ -384,4 +385,9 @@ void toMemoir(BuildContext context) {
 void toAfterService(BuildContext context) {
   Navigator.push(
       context, MaterialPageRoute(builder: (context) => const AfterService()));
+}
+
+void toEndingNoteSub(BuildContext context) {
+  Navigator.push(
+      context, MaterialPageRoute(builder: (context) => const EndingNoteSub()));
 }

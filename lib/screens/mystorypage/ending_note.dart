@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hummingbird/components/freind_component.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:hummingbird/screens/mystorypage/ending_note_subpage.dart';
 
 class EndingNotePage extends StatelessWidget {
   const EndingNotePage({super.key});
@@ -152,11 +153,11 @@ class EndingNotePage extends StatelessWidget {
           Positioned(
             left: 20.w,
             top: 265.h,
-            child: const Column(
+            child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(
+                const Text(
                   "가족",
                   style: TextStyle(
                     fontSize: 15,
@@ -164,19 +165,23 @@ class EndingNotePage extends StatelessWidget {
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 10,
                 ),
-                Friend(
+                const Friend(
                   name: '어머니',
                   myInfo: '어머니 안녕하세요. 아들 설경구입니다. ',
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 10,
                 ),
-                Friend(
-                  name: '사랑스러운 우리 딸',
-                  myInfo: "딸~~ 아빠야",
+                InkWell(
+                  onTap: () => toEndingNoteSub(context),
+                  borderRadius: const BorderRadius.all(Radius.circular(25)),
+                  child: const Friend(
+                    name: '사랑스러운 우리 딸',
+                    myInfo: "딸~~ 아빠야",
+                  ),
                 ),
               ],
             ),
@@ -249,4 +254,9 @@ class EndingNotePage extends StatelessWidget {
       ),
     );
   }
+}
+
+void toEndingNoteSub(BuildContext context) {
+  Navigator.push(
+      context, MaterialPageRoute(builder: (context) => const EndingNoteSub()));
 }
