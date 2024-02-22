@@ -17,8 +17,8 @@ class EndingNotePage extends StatelessWidget {
       child: Stack(
         children: [
           Positioned(
-            left: 6,
-            top: 19,
+            left: 6.w,
+            top: 19.h,
             child: Image.asset("assets/images/mainlogo.png"),
           ),
           Positioned(
@@ -51,46 +51,28 @@ class EndingNotePage extends StatelessWidget {
               ),
             ),
           ),
+
           Positioned(
-            left: 210.w,
-            top: 71.h,
-            child: Container(
-              width: 106.w,
-              height: 96.h,
-              decoration: ShapeDecoration(
-                color: const Color(0xFFEEF1FF),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(21),
+            left: 0.w,
+            top: 80.h,
+            child: SizedBox(
+              width: 360.w,
+              height: 400.h,
+              child: const Center(
+                child: Column(
+                  children: [
+                    Text(
+                      '엔딩노트\nEnding Note',
+                      style: TextStyle(
+                        color: Color(0xFF40405C),
+                        fontSize: 20,
+                        fontFamily: 'Inter',
+                        fontWeight: FontWeight.w800,
+                      ),
+                    ),
+                  ],
                 ),
               ),
-              child: Image.asset('assets/images/woman.png'),
-            ),
-          ),
-          Positioned(
-            left: 30.w,
-            top: 115.h,
-            child: const Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  '엔딩노트',
-                  style: TextStyle(
-                    color: Color(0xFF40405C),
-                    fontSize: 20,
-                    fontFamily: 'Inter',
-                    fontWeight: FontWeight.w800,
-                  ),
-                ),
-                Text(
-                  'Ending Note',
-                  style: TextStyle(
-                    color: Color(0xFF40405C),
-                    fontSize: 20,
-                    fontFamily: 'Inter',
-                    fontWeight: FontWeight.w700,
-                  ),
-                ),
-              ],
             ),
           ),
           Positioned(
@@ -121,12 +103,23 @@ class EndingNotePage extends StatelessWidget {
               left: 20.w,
               top: 265.h,
               child: const Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
+                  Text(
+                    "가족",
+                    style: TextStyle(
+                      fontSize: 15,
+                      color: Colors.black,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
                   Friend(
                     name: '남기동',
                     myInfo: '철학 몽둥이 좀 맞아 볼래?',
-                    imageUrl:
-                        'https://cccv-to.s3.ap-northeast-2.amazonaws.com/files/profile/NuegFtYA2bS3u2tEx4KA_AHeo8MEseS',
                   ),
                   SizedBox(
                     height: 10,
@@ -134,8 +127,6 @@ class EndingNotePage extends StatelessWidget {
                   Friend(
                     name: '황승현',
                     myInfo: "진주시 사랑해요",
-                    imageUrl:
-                        "https://cdn.chungnamilbo.co.kr/news/photo/202008/556383_153186_15.jpg",
                   )
                 ],
               ))

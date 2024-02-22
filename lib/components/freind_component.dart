@@ -3,13 +3,11 @@ import 'package:flutter/material.dart';
 class Friend extends StatelessWidget {
   final String name;
   final String myInfo;
-  final String imageUrl;
 
   const Friend({
     super.key,
     required this.name,
     required this.myInfo,
-    required this.imageUrl,
   });
 
   @override
@@ -37,20 +35,21 @@ class Friend extends StatelessWidget {
                 )
               ]),
           child: Row(
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               const SizedBox(
-                width: 16,
+                width: 10,
               ),
               ClipRRect(
                 borderRadius: BorderRadius.circular(50),
-                child: Image(
-                  image: NetworkImage(imageUrl),
-                  width: 45,
-                  height: 45,
+                child: const Image(
+                  image: AssetImage('assets/images/profile_image_logo.png'),
+                  width: 60,
+                  height: 60,
                 ),
               ),
               const SizedBox(
-                width: 15,
+                width: 12,
               ),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -61,7 +60,7 @@ class Friend extends StatelessWidget {
                     style: const TextStyle(
                         color: Colors.black,
                         fontFamily: "Inter",
-                        fontSize: 12,
+                        fontSize: 16,
                         fontWeight: FontWeight.w100),
                   ),
                   Text(
@@ -69,7 +68,7 @@ class Friend extends StatelessWidget {
                     style: const TextStyle(
                         color: Colors.black45,
                         fontFamily: "Inter",
-                        fontSize: 12,
+                        fontSize: 13,
                         fontWeight: FontWeight.w400),
                   )
                 ],

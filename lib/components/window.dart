@@ -40,25 +40,36 @@ class Window extends StatelessWidget {
     return Stack(
       alignment: Alignment.center,
       children: [
-        Positioned(child: Image.asset('assets/images/window.png')),
         Positioned(
-          top: 10,
+            child: Container(
+          height: 213,
+          width: 130,
+          decoration: const BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage('assets/images/window.png'),
+              fit: BoxFit.fill,
+            ),
+          ),
+        )),
+        Positioned(
+          top: 30,
           child: ClipRRect(
             borderRadius: BorderRadius.circular(50),
             child: const Image(
-              image: AssetImage('assets/images/mainlogo.png'),
+              image: AssetImage('assets/images/window_main_logo.png'),
               width: 100,
               height: 100,
+              fit: BoxFit.fill,
             ),
           ),
         ),
         Positioned(
           left: 0,
-          top: 123,
+          top: 140,
           child: Container(
             alignment: Alignment.center,
-            width: 114,
-            height: 40,
+            width: 130,
+            height: 50,
             decoration: const BoxDecoration(
               color: Colors.white,
               boxShadow: [

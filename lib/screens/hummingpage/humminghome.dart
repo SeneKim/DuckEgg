@@ -11,7 +11,7 @@ class HummingHomPage extends StatelessWidget {
       children: [
         Container(
           width: 360.w,
-          height: 745.75.h,
+          height: 742.5.h,
           clipBehavior: Clip.antiAlias,
           decoration: const BoxDecoration(
             color: Colors.white,
@@ -112,10 +112,10 @@ class HummingHomPage extends StatelessWidget {
               ),
               Positioned(
                 left: 0.w,
-                top: 63.h,
+                top: 50.h,
                 child: SizedBox(
                   width: 360.w,
-                  height: 500.h,
+                  height: 600.h,
                   child: const Center(
                     child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
@@ -136,14 +136,14 @@ class HummingHomPage extends StatelessWidget {
                             textAlign: TextAlign.center,
                             style: TextStyle(
                               color: Color(0xFF40405C),
-                              fontSize: 10,
+                              fontSize: 14,
                               fontFamily: 'Inter',
                               fontWeight: FontWeight.w400,
                               height: 0,
                             ),
                           ),
                           SizedBox(
-                            height: 40,
+                            height: 50,
                           ),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.center,

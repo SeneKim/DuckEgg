@@ -100,7 +100,7 @@ class MyStoryHomePage extends StatelessWidget {
               '윤찬님, 안녕하세요 \n나를 기록해 보아요',
               style: TextStyle(
                 color: Color(0xFF40405C),
-                fontSize: 10,
+                fontSize: 14,
                 fontFamily: 'Inter',
                 fontWeight: FontWeight.w400,
                 height: 0,
@@ -193,7 +193,7 @@ class MyStoryHomePage extends StatelessWidget {
                               'LIFE DIARY',
                               style: TextStyle(
                                 color: Color(0xFFEEF1FF),
-                                fontSize: 14,
+                                fontSize: 15,
                                 fontFamily: 'Inter',
                                 fontWeight: FontWeight.w800,
                                 height: 0,
@@ -204,17 +204,14 @@ class MyStoryHomePage extends StatelessWidget {
                               height: 5,
                             ),
                             const Text(
-                              '윤찬님의 일생에 대한 일기를 작성할 수 있어요!',
+                              '설경구님의 일생에 대한 일기를 작성할 수 있어요!',
                               style: TextStyle(
                                 color: Color(0xFF40405C),
-                                fontSize: 14,
+                                fontSize: 16,
                                 fontFamily: 'Inter',
                                 fontWeight: FontWeight.w700,
                                 height: 0,
                               ),
-                            ),
-                            const SizedBox(
-                              height: 3,
                             ),
                             ElevatedButton(
                               onPressed: () {},
@@ -231,7 +228,7 @@ class MyStoryHomePage extends StatelessWidget {
                                 style: TextStyle(
                                   color: Colors.black,
                                   fontWeight: FontWeight.bold,
-                                  fontSize: 12,
+                                  fontSize: 14,
                                 ),
                               ),
                             ),
@@ -273,7 +270,7 @@ class MyStoryHomePage extends StatelessWidget {
           // 귀찮아서 이미지 가져다 붙여버림
           Positioned(
             left: 15.w,
-            top: 310.h,
+            top: 300.h,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -285,7 +282,7 @@ class MyStoryHomePage extends StatelessWidget {
                     borderRadius: BorderRadius.circular(20),
                     child: Container(
                       width: 330.w,
-                      height: 100.h,
+                      height: 105.h,
                       decoration: const BoxDecoration(
                           image: DecorationImage(
                               image: AssetImage(
@@ -294,7 +291,7 @@ class MyStoryHomePage extends StatelessWidget {
                     ),
                   ),
                 ),
-                const SizedBox(height: 8),
+                const SizedBox(height: 5),
                 Material(
                   color: Colors.transparent,
                   child: InkWell(
@@ -302,7 +299,7 @@ class MyStoryHomePage extends StatelessWidget {
                     borderRadius: BorderRadius.circular(20),
                     child: Container(
                       width: 330.w,
-                      height: 100.h,
+                      height: 105.h,
                       decoration: const BoxDecoration(
                           image: DecorationImage(
                               image:
@@ -311,7 +308,7 @@ class MyStoryHomePage extends StatelessWidget {
                     ),
                   ),
                 ),
-                const SizedBox(height: 8),
+                const SizedBox(height: 5),
                 Material(
                   color: Colors.transparent,
                   child: InkWell(
@@ -319,7 +316,7 @@ class MyStoryHomePage extends StatelessWidget {
                     borderRadius: BorderRadius.circular(20),
                     child: Container(
                       width: 330.w,
-                      height: 100.h,
+                      height: 105.h,
                       decoration: const BoxDecoration(
                           image: DecorationImage(
                               image: AssetImage('assets/images/diary.png'),
@@ -327,7 +324,7 @@ class MyStoryHomePage extends StatelessWidget {
                     ),
                   ),
                 ),
-                const SizedBox(height: 8),
+                const SizedBox(height: 5),
                 Material(
                   color: Colors.transparent,
                   child: InkWell(
@@ -335,7 +332,7 @@ class MyStoryHomePage extends StatelessWidget {
                     borderRadius: BorderRadius.circular(20),
                     child: Container(
                       width: 330.w,
-                      height: 100.h,
+                      height: 105.h,
                       decoration: const BoxDecoration(
                           image: DecorationImage(
                               image:
