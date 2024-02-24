@@ -12,70 +12,62 @@ class Friend extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Material(
-      color: Colors.transparent,
-      child: InkWell(
-        onTap: () {},
-        // 사각형 deco
-        borderRadius: BorderRadius.circular(20),
-        child: Container(
-          height: 70,
-          width: 370,
-          decoration: BoxDecoration(
-              color: Colors.white,
-              border: const Border.symmetric(
-                  horizontal: BorderSide(color: Color(0xFFB5B7FF), width: 1.5)),
-              borderRadius: BorderRadius.circular(20),
-              boxShadow: [
-                BoxShadow(
-                  color: Colors.grey.withOpacity(0.3),
-                  blurRadius: 3,
-                  spreadRadius: 2,
-                  offset: const Offset(0, 3),
-                )
-              ]),
-          child: Row(
-            crossAxisAlignment: CrossAxisAlignment.center,
+    return Container(
+      height: 70,
+      width: 370,
+      decoration: BoxDecoration(
+          color: Colors.white,
+          border: const Border.symmetric(
+              horizontal: BorderSide(color: Color(0xFFB5B7FF), width: 1.5)),
+          borderRadius: BorderRadius.circular(20),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.grey.withOpacity(0.3),
+              blurRadius: 3,
+              spreadRadius: 2,
+              offset: const Offset(0, 3),
+            )
+          ]),
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          const SizedBox(
+            width: 10,
+          ),
+          ClipRRect(
+            borderRadius: BorderRadius.circular(50),
+            child: const Image(
+              image: AssetImage('assets/images/profile_image_logo.png'),
+              width: 60,
+              height: 60,
+            ),
+          ),
+          const SizedBox(
+            width: 12,
+          ),
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const SizedBox(
-                width: 10,
+              Text(
+                name,
+                style: const TextStyle(
+                    color: Colors.black,
+                    fontFamily: "Inter",
+                    fontSize: 16,
+                    fontWeight: FontWeight.w400),
               ),
-              ClipRRect(
-                borderRadius: BorderRadius.circular(50),
-                child: const Image(
-                  image: AssetImage('assets/images/profile_image_logo.png'),
-                  width: 60,
-                  height: 60,
-                ),
-              ),
-              const SizedBox(
-                width: 12,
-              ),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text(
-                    name,
-                    style: const TextStyle(
-                        color: Colors.black,
-                        fontFamily: "Inter",
-                        fontSize: 16,
-                        fontWeight: FontWeight.w400),
-                  ),
-                  Text(
-                    myInfo,
-                    style: const TextStyle(
-                        color: Colors.black45,
-                        fontFamily: "Inter",
-                        fontSize: 13,
-                        fontWeight: FontWeight.w300),
-                  )
-                ],
-              ),
+              Text(
+                myInfo,
+                style: const TextStyle(
+                    color: Colors.black45,
+                    fontFamily: "Inter",
+                    fontSize: 13,
+                    fontWeight: FontWeight.w300),
+              )
             ],
           ),
-        ),
+        ],
       ),
     );
   }
