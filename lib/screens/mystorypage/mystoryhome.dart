@@ -63,8 +63,8 @@ class MyStoryHomePage extends StatelessWidget {
           ////////////////////////////////////////////////////////////////////////////
           ///// 우리 로고 위치 !!!!!!!! 기억하라
           Positioned(
-            left: 6.w,
-            top: 25.h,
+            left: 20.w,
+            top: 40.h,
             child: Image.asset('assets/images/mainlogo.png'),
           ),
           Positioned(

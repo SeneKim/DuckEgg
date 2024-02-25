@@ -3,7 +3,8 @@ import 'package:hummingbird/navigation/navbar_items.dart';
 import 'package:hummingbird/navigation/tab_item.dart';
 
 class BottomNavigation extends StatelessWidget {
-  BottomNavigation({required this.currentTab, required this.onSelectTab});
+  const BottomNavigation(
+      {super.key, required this.currentTab, required this.onSelectTab});
   final TabItem currentTab;
   final ValueChanged<TabItem> onSelectTab;
 
@@ -15,6 +16,7 @@ class BottomNavigation extends StatelessWidget {
         _buildItem(TabItem.home),
         _buildItem(TabItem.humming),
         _buildItem(TabItem.mystory),
+        _buildItem(TabItem.setting),
       ],
       onTap: (index) => onSelectTab(
         TabItem.values[index],

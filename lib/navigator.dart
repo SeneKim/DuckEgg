@@ -3,6 +3,7 @@ import 'package:hummingbird/screens/hummingpage/humminghome.dart';
 import 'package:hummingbird/screens/mystorypage/mystoryhome.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:hummingbird/screens/settingpage/setting.dart';
 
 class NavigatorPage extends StatefulWidget {
   const NavigatorPage({super.key});
@@ -20,11 +21,12 @@ class _NavigatorPageState extends State<NavigatorPage> {
     const MainHomePage(),
     const HummingHomPage(),
     const MyStoryHomePage(),
+    const SettingMain(),
   ];
 
   void _selectTab(int tabIndex) {
     if (tabIndex == _selectedIndex) {
-      _navigatorKeyList[tabIndex]!
+      _navigatorKeyList[tabIndex]
           .currentState!
           .popUntil((route) => route.isFirst);
     } else {
@@ -55,7 +57,6 @@ class _NavigatorPageState extends State<NavigatorPage> {
             );
           }).toList(),
         ),
-        
         bottomNavigationBar: BottomNavigationBar(
           type: BottomNavigationBarType.fixed,
           items: <BottomNavigationBarItem>[

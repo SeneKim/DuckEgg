@@ -4,6 +4,8 @@ import 'package:hummingbird/navigation/tab_item.dart';
 import 'package:hummingbird/navigation/tab_navigator.dart';
 
 class App extends StatefulWidget {
+  const App({super.key});
+
   @override
   State<App> createState() => _AppState();
 }
@@ -47,6 +49,7 @@ class _AppState extends State<App> {
             _buildOffstageNavigator(TabItem.home),
             _buildOffstageNavigator(TabItem.humming),
             _buildOffstageNavigator(TabItem.mystory),
+            _buildOffstageNavigator(TabItem.setting),
           ],
         ),
         bottomNavigationBar: BottomNavigation(
