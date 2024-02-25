@@ -18,7 +18,7 @@ class _NavigatorPageState extends State<NavigatorPage> {
 
   final List<Widget> _widgetOptions = <Widget>[
     const MainHomePage(),
-    const HummingHomPage(),
+    const HummingHomePage(),
     const MyStoryHomePage(),
   ];
 

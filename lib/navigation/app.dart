@@ -15,6 +15,7 @@ class _AppState extends State<App> {
     TabItem.home: GlobalKey<NavigatorState>(),
     TabItem.humming: GlobalKey<NavigatorState>(),
     TabItem.mystory: GlobalKey<NavigatorState>(),
+    TabItem.setting: GlobalKey<NavigatorState>(),
   };
 
   void _selectTab(TabItem tabItem) {
@@ -47,6 +48,7 @@ class _AppState extends State<App> {
             _buildOffstageNavigator(TabItem.home),
             _buildOffstageNavigator(TabItem.humming),
             _buildOffstageNavigator(TabItem.mystory),
+            _buildOffstageNavigator(TabItem.setting),
           ],
         ),
         bottomNavigationBar: BottomNavigation(

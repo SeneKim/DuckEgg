@@ -15,6 +15,7 @@ class BottomNavigation extends StatelessWidget {
         _buildItem(TabItem.home),
         _buildItem(TabItem.humming),
         _buildItem(TabItem.mystory),
+        _buildItem(TabItem.setting),
       ],
       onTap: (index) => onSelectTab(
         TabItem.values[index],

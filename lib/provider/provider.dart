@@ -3,14 +3,20 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
 class GlobalStore extends ChangeNotifier {
-  final String freindListURL = "http://192.168.10.58:8000/api/user/friend_list";
-  final String _userID = "65c87e3acbda4f6e5d3bc475";
+  final String freindListURL = "http://172.30.1.88:8000/api/user/friend_list";
+
+  final String _userID = "65c87e3acbda4f6e5d3bc475"; //나는 남기동이다.
   String get userID => _userID;
-  String selectedFriendID = "";
+  //String selectedFriendID = "";
+
+  // void setSelectedFriendID(String currentFriend) {
+  //   selectedFriendID = currentFriend;
+  //   notifyListeners();
+  // }
 
   Map<String, String> friendList = {};
 
-  void getHttpRequestData() async {
+  void getFreindListData() async {
     final uri = Uri.parse(freindListURL);
     final response = await http.get(uri.replace(queryParameters: {
       "user_id": _userID,

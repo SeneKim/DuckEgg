@@ -1,16 +1,17 @@
+import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 import 'package:speech_to_text/speech_to_text.dart';
 import 'package:hummingbird/controllers/getcall.dart';
 import 'package:hummingbird/controllers/postcall.dart';
 
-class CallingPage extends StatefulWidget {
-  const CallingPage({super.key});
+class CallingPage2 extends StatefulWidget {
+  const CallingPage2({super.key});
 
   @override
-  State<CallingPage> createState() => _CallingPageState();
+  State<CallingPage2> createState() => _CallingPage2State();
 }
 
-class _CallingPageState extends State<CallingPage> {
+class _CallingPage2State extends State<CallingPage2> {
   // STT Variables
   SpeechToText _speechToText = SpeechToText();
   bool _speechEnabled = false;
@@ -20,8 +21,7 @@ class _CallingPageState extends State<CallingPage> {
   final String chatroomID = "65cda35223f8190950c4a7d4";
   String? taskID;
   bool doingDia = true;
-  bool doingAns = true;
-  int columnCount = 0;
+  bool doingAns = false;
 
   @override
   void initState() {
@@ -38,19 +38,19 @@ class _CallingPageState extends State<CallingPage> {
   Future<void> _startListening() async {
     await _speechToText.listen(
       onResult: _onSpeechResult,
-      pauseFor: Duration(milliseconds: 4250),
+      pauseFor: Duration(milliseconds: 3450),
       localeId: 'ko-KR',
     );
-    await Future.delayed(Duration(milliseconds: 2000));
+    await Future.delayed(Duration(milliseconds: 1200));
     _speechToText.changePauseFor(Duration(milliseconds: 2250));
+
     setState(() {});
   }
 
-  void _stopListening() async {
+  Future<void> _stopListening() async {
     await _speechToText.stop();
     setState(() {
       doingAns = false;
-      doingDia = false;
     });
   }
 
@@ -68,9 +68,11 @@ class _CallingPageState extends State<CallingPage> {
     required String answerURL,
   }) async {
     int count = 0;
+    doingDialog = true;
     while (doingDialog) {
       await _startListening();
       Future.delayed(Duration(milliseconds: 50));
+
       while (_speechToText.isListening) {
         await Future.delayed(Duration(milliseconds: 10));
       }
@@ -88,7 +90,16 @@ class _CallingPageState extends State<CallingPage> {
         int len = taskStatus['len'];
 
         if ((taskStatus['task_status'] != 'todo' && count < len)) {
-          getVoice(answerURL, taskID, count + 1);
+          if (taskID == null) {
+            print("taskID가 제대로 안 넘어옴");
+          }
+          final String uri = "$answerURL?task_id=$taskID&index=${count + 1}";
+          final player = AudioPlayer();
+          await player.play(UrlSource(uri));
+          while (player.state == PlayerState.playing) {
+            await Future.delayed(Duration(milliseconds: 10));
+          }
+          print(player.state);
           count++;
         }
         if (taskStatus['task_status'] == 'done' && (count == len)) {
@@ -96,19 +107,27 @@ class _CallingPageState extends State<CallingPage> {
         }
         await Future.delayed(Duration(milliseconds: 250));
       }
-      columnCount++;
     }
   }
 
   @override
   Widget build(BuildContext context) {
-    const String createURL = "http://192.168.10.147:8000/api/user/task/create";
-    const String statusURL = "http://192.168.10.147:8000/api/user/task/status";
-    const String answerURL = "http://192.168.10.147:8000/api/user/task/answer";
+    const String createURL = "http://172.30.1.88:8000/api/user/task/create";
+    const String statusURL = "http://172.30.1.88:8000/api/user/task/status";
+    const String answerURL = "http://172.30.1.88:8000/api/user/task/answer";
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
         title: Text("LEGEND DIALOG"),
+      ),
+      body: ElevatedButton(
+        child: Text("종료"),
+        onPressed: () {
+          setState(() {
+            doingDia = false;
+          });
+          _stopListening();
+        },
       ),
       floatingActionButton: FloatingActionButton(
           onPressed: () {

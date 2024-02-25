@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'dart:convert';
 import 'package:audioplayers/audioplayers.dart';
 import 'package:http/http.dart' as http;
@@ -70,7 +71,7 @@ Future<void> getVoice(String myurl, String? taskID, int count) async {
   if (taskID == null) {
     print("taskID가 제대로 안 넘어옴");
   }
-  final uri = "$myurl?$taskID=$count";
+  final String uri = "$myurl?task_id=$taskID&index=$count";
   final player = AudioPlayer();
   await player.play(UrlSource(uri));
 }
