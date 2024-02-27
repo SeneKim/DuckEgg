@@ -54,8 +54,8 @@ class _MemoirPageState extends State<MemoirPage> {
 
   _loadText3() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
-    String? savedText2 = prefs.getString('savedText3');
-    inputController2.text = savedText2!;
+    String? savedText3 = prefs.getString('savedText3');
+    inputController3.text = savedText3!;
   }
 
   _saveText3(String text) async {
@@ -249,7 +249,7 @@ class _MemoirPageState extends State<MemoirPage> {
                                       _saveText(text);
                                     },
                                     style: TextStyle(
-                                      fontSize: 14.0,
+                                      fontSize: 16.0,
                                     ),
                                     decoration: InputDecoration(
                                       border: InputBorder.none,
@@ -329,9 +329,7 @@ class _MemoirPageState extends State<MemoirPage> {
                                     //keyboardType: TextInputType.emailAddress,
                                     maxLines: null,
                                     onChanged: (text) {
-                                      setState(() {
-                                        _saveText2(text);
-                                      });
+                                      _saveText2(text);
                                     },
                                     style: TextStyle(
                                       fontSize: 16.0,
@@ -418,7 +416,7 @@ class _MemoirPageState extends State<MemoirPage> {
                                       _saveText3(text);
                                     },
                                     style: TextStyle(
-                                      fontSize: 18.0,
+                                      fontSize: 16.0,
                                     ),
                                     decoration: InputDecoration(
                                       border: InputBorder.none,

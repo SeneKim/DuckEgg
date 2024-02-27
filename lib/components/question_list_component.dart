@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:hummingbird/screens/mystorypage/daliy_question_subpage/daliy_question_subpage4.dart';
+
 
 class Qlist extends StatelessWidget {
   final num questionNumber;
@@ -66,9 +66,4 @@ class Qlist extends StatelessWidget {
       ]),
     );
   }
-}
-
-void toDailyQuesSub4(BuildContext context) {
-  Navigator.push(context,
-      MaterialPageRoute(builder: (context) => const DailyQuestionSub4()));
 }

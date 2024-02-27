@@ -1,10 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hummingbird/components/question_list_component.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:hummingbird/screens/mystorypage/daliy_question_subpage/daliy_question_subpage1.dart';
-import 'package:hummingbird/screens/mystorypage/daliy_question_subpage/daliy_question_subpage2.dart';
-import 'package:hummingbird/screens/mystorypage/daliy_question_subpage/daliy_question_subpage3.dart';
-import 'package:hummingbird/screens/mystorypage/daliy_question_subpage/daliy_question_subpage4.dart';
 import 'package:hummingbird/screens/mystorypage/daliy_question_subpage/daliy_question_todayQ%20copy%201.dart';
 import 'package:hummingbird/screens/mystorypage/daliy_question_subpage/daliy_question_todayQ%20copy%2010.dart';
 import 'package:hummingbird/screens/mystorypage/daliy_question_subpage/daliy_question_todayQ%20copy%2011.dart';

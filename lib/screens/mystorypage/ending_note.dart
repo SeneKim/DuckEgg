@@ -180,7 +180,7 @@ class EndingNotePage extends StatelessWidget {
                       borderRadius: const BorderRadius.all(Radius.circular(25)),
                       child: const Friend(
                         name: '어머니',
-                        myInfo: '어머니, 아들 강재혁입니다. 무뚝뚝한 아들놈 데리.. ',
+                        myInfo: '어머니, 아들 김남길입니다. 무뚝뚝한 아들놈 데리.. ',
                       ),
                     ),
                     const SizedBox(
@@ -224,7 +224,7 @@ class EndingNotePage extends StatelessWidget {
                       borderRadius: const BorderRadius.all(Radius.circular(25)),
                       child: const Friend(
                         name: '손석구',
-                        myInfo: '얌마 나 재혁이다. 잘 지내지? 요즘 너 핫하더라. T..',
+                        myInfo: '얌마 나 남길이다. 잘 지내지? 요즘 너 핫하더라. T..',
                       ),
                     ),
                     const SizedBox(
