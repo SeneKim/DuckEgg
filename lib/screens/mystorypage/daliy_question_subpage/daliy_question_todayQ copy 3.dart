@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-class TodayQuestionPage extends StatefulWidget {
-  const TodayQuestionPage({super.key});
+class TodayQuestionPage3 extends StatefulWidget {
+  const TodayQuestionPage3({super.key});
 
   @override
-  State<TodayQuestionPage> createState() => _TodayQuestionPage();
+  State<TodayQuestionPage3> createState() => _TodayQuestionPage3();
 }
 
-class _TodayQuestionPage extends State<TodayQuestionPage> {
+class _TodayQuestionPage3 extends State<TodayQuestionPage3> {
   TextEditingController inputController = TextEditingController();
 
   @override
@@ -26,13 +26,13 @@ class _TodayQuestionPage extends State<TodayQuestionPage> {
 
   _loadText() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
-    String? savedText = prefs.getString('todayQ');
+    String? savedText = prefs.getString('todayQ3');
     inputController.text = savedText!;
   }
 
   _saveText(String text) async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
-    await prefs.setString('todayQ', text);
+    await prefs.setString('todayQ3', text);
   }
 
   @override
@@ -267,7 +267,7 @@ class _TodayQuestionPage extends State<TodayQuestionPage> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Text(
-                              '가족끼리 자주 여행가던 장소가 있나요?\n그곳에선 무엇을 했나요?',
+                              '최근에 누군가에게\n사과했던 일이 있나요?',
                               style: TextStyle(
                                   color: Colors.black,
                                   fontSize: 20,

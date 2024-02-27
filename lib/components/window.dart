@@ -59,7 +59,7 @@ class Window extends StatelessWidget {
                 color: Colors.black,
                 fontFamily: "Inter",
                 fontWeight: FontWeight.w600,
-                fontSize: 12,
+                fontSize: 14,
               ),
             ),
           ),

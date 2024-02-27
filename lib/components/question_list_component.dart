@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hummingbird/screens/mystorypage/daliy_question_subpage/daliy_question_subpage4.dart';
 
 class Qlist extends StatelessWidget {
@@ -14,8 +15,8 @@ class Qlist extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 45,
-      width: 380,
+      height: 45.h,
+      width: 328.w,
       decoration: BoxDecoration(
           color: Colors.white,
           border: const Border.symmetric(
@@ -31,7 +32,7 @@ class Qlist extends StatelessWidget {
           ]),
       child: Row(children: [
         const SizedBox(
-          width: 16,
+          width: 10,
         ),
         Container(
           width: 24,
@@ -53,7 +54,7 @@ class Qlist extends StatelessWidget {
               fontWeight: FontWeight.w200),
         ),
         const SizedBox(
-          width: 15,
+          width: 10,
         ),
         Text(
           question,

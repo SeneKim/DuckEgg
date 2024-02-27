@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-class TodayQuestionPage extends StatefulWidget {
-  const TodayQuestionPage({super.key});
+class TodayQuestionPage4 extends StatefulWidget {
+  const TodayQuestionPage4({super.key});
 
   @override
-  State<TodayQuestionPage> createState() => _TodayQuestionPage();
+  State<TodayQuestionPage4> createState() => _TodayQuestionPage4();
 }
 
-class _TodayQuestionPage extends State<TodayQuestionPage> {
+class _TodayQuestionPage4 extends State<TodayQuestionPage4> {
   TextEditingController inputController = TextEditingController();
 
   @override
@@ -26,13 +26,13 @@ class _TodayQuestionPage extends State<TodayQuestionPage> {
 
   _loadText() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
-    String? savedText = prefs.getString('todayQ');
+    String? savedText = prefs.getString('todayQ4');
     inputController.text = savedText!;
   }
 
   _saveText(String text) async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
-    await prefs.setString('todayQ', text);
+    await prefs.setString('todayQ4', text);
   }
 
   @override
@@ -267,7 +267,7 @@ class _TodayQuestionPage extends State<TodayQuestionPage> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Text(
-                              '가족끼리 자주 여행가던 장소가 있나요?\n그곳에선 무엇을 했나요?',
+                              '당신의 버킷리스트를 3가지만 알려주세요.\n선정하신 이유도 함께 적어주세요!',
                               style: TextStyle(
                                   color: Colors.black,
                                   fontSize: 20,

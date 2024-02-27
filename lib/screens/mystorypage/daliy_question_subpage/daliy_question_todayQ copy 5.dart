@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-class TodayQuestionPage extends StatefulWidget {
-  const TodayQuestionPage({super.key});
+class TodayQuestionPage5 extends StatefulWidget {
+  const TodayQuestionPage5({super.key});
 
   @override
-  State<TodayQuestionPage> createState() => _TodayQuestionPage();
+  State<TodayQuestionPage5> createState() => _TodayQuestionPage5();
 }
 
-class _TodayQuestionPage extends State<TodayQuestionPage> {
+class _TodayQuestionPage5 extends State<TodayQuestionPage5> {
   TextEditingController inputController = TextEditingController();
 
   @override
@@ -26,13 +26,13 @@ class _TodayQuestionPage extends State<TodayQuestionPage> {
 
   _loadText() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
-    String? savedText = prefs.getString('todayQ');
+    String? savedText = prefs.getString('todayQ5');
     inputController.text = savedText!;
   }
 
   _saveText(String text) async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
-    await prefs.setString('todayQ', text);
+    await prefs.setString('todayQ5', text);
   }
 
   @override
@@ -267,7 +267,7 @@ class _TodayQuestionPage extends State<TodayQuestionPage> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Text(
-                              '가족끼리 자주 여행가던 장소가 있나요?\n그곳에선 무엇을 했나요?',
+                              '당신의 인생 영화는 무엇인가요?\n인상적이었던 이유도 알려주세요!',
                               style: TextStyle(
                                   color: Colors.black,
                                   fontSize: 20,

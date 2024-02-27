@@ -37,6 +37,14 @@ class _CallingState extends State<Calling> {
       });
     });
     _initSpeech();
+    Future.delayed(Duration(microseconds: 1500), () {
+      _getAnswer(
+          doingDialog: doingDia,
+          doing: doingAns,
+          createURL: createURL,
+          statusURL: statusURL,
+          answerURL: answerURL);
+    });
   }
 
   @override
@@ -51,16 +59,13 @@ class _CallingState extends State<Calling> {
   String _wordsSpoken = "";
 
   // Commuication Variables
-  final String chatroomID = "65cda35223f8190950c4a7d4";
+  final String chatroomID = "65dbfa9c083a7274d573cf5f";
+  final String createURL = "http://114.203.189.52:8000/api/user/task/create";
+  final String statusURL = "http://114.203.189.52:8000/api/user/task/status";
+  final String answerURL = "http://114.203.189.52:8000/api/user/task/answer";
   String? taskID;
   bool doingDia = true;
-  bool doingAns = false;
-
-  // @override
-  // void initState() {
-  //   super.initState();
-  //   _initSpeech();
-  // }
+  bool doingAns = true;
 
   void _initSpeech() async {
     _speechEnabled = await _speechToText.initialize(
@@ -71,12 +76,11 @@ class _CallingState extends State<Calling> {
   Future<void> _startListening() async {
     await _speechToText.listen(
       onResult: _onSpeechResult,
-      pauseFor: Duration(milliseconds: 3450),
+      pauseFor: Duration(milliseconds: 4250),
       localeId: 'ko-KR',
     );
-    await Future.delayed(Duration(milliseconds: 1200));
-    _speechToText.changePauseFor(Duration(milliseconds: 2250));
-
+    await Future.delayed(Duration(milliseconds: 2000));
+    _speechToText.changePauseFor(Duration(milliseconds: 2200));
     setState(() {});
   }
 
@@ -84,6 +88,7 @@ class _CallingState extends State<Calling> {
     await _speechToText.stop();
     setState(() {
       doingAns = false;
+      doingDia = false;
     });
   }
 
@@ -104,11 +109,12 @@ class _CallingState extends State<Calling> {
     doingDialog = true;
     while (doingDialog) {
       await _startListening();
-      Future.delayed(Duration(milliseconds: 50));
+      Future.delayed(Duration(milliseconds: 20));
 
       while (_speechToText.isListening) {
         await Future.delayed(Duration(milliseconds: 10));
       }
+      await Future.delayed(Duration(milliseconds: 50));
       dynamic postResult = await postTask(createURL, chatroomID, _wordsSpoken);
       setState(() {
         taskID = postResult;
@@ -138,16 +144,13 @@ class _CallingState extends State<Calling> {
         if (taskStatus['task_status'] == 'done' && (count == len)) {
           doing = false;
         }
-        await Future.delayed(Duration(milliseconds: 250));
+        await Future.delayed(Duration(milliseconds: 200));
       }
     }
   }
 
   @override
   Widget build(BuildContext context) {
-    const String createURL = "http://172.30.1.88:8000/api/user/task/create";
-    const String statusURL = "http://172.30.1.88:8000/api/user/task/status";
-    const String answerURL = "http://172.30.1.88:8000/api/user/task/answer";
     int minutes = _elapsedSeconds ~/ 60;
     int seconds = _elapsedSeconds % 60;
     String formattedTime =
@@ -256,16 +259,16 @@ class _CallingState extends State<Calling> {
                 )),
 
             Positioned(
-              left: 42.w,
-              top: 660.h,
+              left: 25.w,
+              top: 640.h,
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   InkWell(
                     onTap: () {},
                     child: Container(
-                      width: 70,
-                      height: 70,
+                      width: 66.w,
+                      height: 66.h,
                       decoration: const BoxDecoration(
                         color: Color.fromARGB(100, 210, 173, 216),
                         shape: BoxShape.circle,
@@ -274,20 +277,23 @@ class _CallingState extends State<Calling> {
                         padding: const EdgeInsets.all(8.0),
                         child: SvgPicture.asset(
                           'assets/icons/bluetooth.svg',
-                          width: 24,
-                          height: 24,
+                          width: 30.w,
+                          height: 30.h,
                         ),
                       ),
                     ),
                   ),
-                  const SizedBox(
-                    width: 56,
+                  SizedBox(
+                    width: 56.w,
                   ),
                   InkWell(
-                    onTap: () => Navigator.of(context).pop(),
+                    onTap: () {
+                      _stopListening();
+                      Navigator.of(context).pop();
+                    },
                     child: Container(
-                      width: 70,
-                      height: 70,
+                      width: 66.w,
+                      height: 66.h,
                       decoration: const BoxDecoration(
                         color: Colors.red,
                         shape: BoxShape.circle,
@@ -296,20 +302,20 @@ class _CallingState extends State<Calling> {
                         padding: const EdgeInsets.all(8.0),
                         child: SvgPicture.asset(
                           'assets/icons/callend.svg',
-                          width: 24,
-                          height: 24,
+                          width: 30.w,
+                          height: 30.h,
                         ),
                       ),
                     ),
                   ),
-                  const SizedBox(
-                    width: 56,
+                  SizedBox(
+                    width: 56.w,
                   ),
                   InkWell(
                     onTap: () {},
                     child: Container(
-                      width: 70,
-                      height: 70,
+                      width: 66.w,
+                      height: 66.h,
                       decoration: const BoxDecoration(
                         color: Color.fromARGB(100, 210, 173, 216),
                         shape: BoxShape.circle,
@@ -318,8 +324,8 @@ class _CallingState extends State<Calling> {
                         padding: const EdgeInsets.all(8.0),
                         child: SvgPicture.asset(
                           'assets/icons/speaker.svg',
-                          width: 24,
-                          height: 24,
+                          width: 30.w,
+                          height: 30.h,
                         ),
                       ),
                     ),

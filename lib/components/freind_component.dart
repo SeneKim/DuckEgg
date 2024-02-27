@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class Friend extends StatelessWidget {
   final String name;
@@ -13,8 +14,8 @@ class Friend extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 70,
-      width: 370,
+      height: 70.h,
+      width: 320.w,
       decoration: BoxDecoration(
           color: Colors.white,
           border: const Border.symmetric(
@@ -32,7 +33,7 @@ class Friend extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           const SizedBox(
-            width: 10,
+            width: 4,
           ),
           ClipRRect(
             borderRadius: BorderRadius.circular(50),
@@ -43,7 +44,7 @@ class Friend extends StatelessWidget {
             ),
           ),
           const SizedBox(
-            width: 12,
+            width: 8,
           ),
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,

@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-class TodayQuestionPage extends StatefulWidget {
-  const TodayQuestionPage({super.key});
+class TodayQuestionPage1 extends StatefulWidget {
+  const TodayQuestionPage1({super.key});
 
   @override
-  State<TodayQuestionPage> createState() => _TodayQuestionPage();
+  State<TodayQuestionPage1> createState() => _TodayQuestionPage1();
 }
 
-class _TodayQuestionPage extends State<TodayQuestionPage> {
+class _TodayQuestionPage1 extends State<TodayQuestionPage1> {
   TextEditingController inputController = TextEditingController();
 
   @override
@@ -26,13 +26,13 @@ class _TodayQuestionPage extends State<TodayQuestionPage> {
 
   _loadText() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
-    String? savedText = prefs.getString('todayQ');
+    String? savedText = prefs.getString('todayQ1');
     inputController.text = savedText!;
   }
 
   _saveText(String text) async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
-    await prefs.setString('todayQ', text);
+    await prefs.setString('todayQ1', text);
   }
 
   @override
@@ -267,7 +267,7 @@ class _TodayQuestionPage extends State<TodayQuestionPage> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Text(
-                              '가족끼리 자주 여행가던 장소가 있나요?\n그곳에선 무엇을 했나요?',
+                              '10년 동안 한 음식만 먹을 수 있다면 어떤\n음식을 먹고 싶은가요? 이유도 같이 말씀\n해주세요!',
                               style: TextStyle(
                                   color: Colors.black,
                                   fontSize: 20,

@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-class TodayQuestionPage extends StatefulWidget {
-  const TodayQuestionPage({super.key});
+class TodayQuestionPage10 extends StatefulWidget {
+  const TodayQuestionPage10({super.key});
 
   @override
-  State<TodayQuestionPage> createState() => _TodayQuestionPage();
+  State<TodayQuestionPage10> createState() => _TodayQuestionPage10();
 }
 
-class _TodayQuestionPage extends State<TodayQuestionPage> {
+class _TodayQuestionPage10 extends State<TodayQuestionPage10> {
   TextEditingController inputController = TextEditingController();
 
   @override
@@ -26,13 +26,13 @@ class _TodayQuestionPage extends State<TodayQuestionPage> {
 
   _loadText() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
-    String? savedText = prefs.getString('todayQ');
+    String? savedText = prefs.getString('todayQ10');
     inputController.text = savedText!;
   }
 
   _saveText(String text) async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
-    await prefs.setString('todayQ', text);
+    await prefs.setString('todayQ10', text);
   }
 
   @override
@@ -267,7 +267,7 @@ class _TodayQuestionPage extends State<TodayQuestionPage> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Text(
-                              '가족끼리 자주 여행가던 장소가 있나요?\n그곳에선 무엇을 했나요?',
+                              '딸이 만약 바퀴벌레로 변한다면 어떡하\n실건가요? 당신의 반응이 궁금해요!',
                               style: TextStyle(
                                   color: Colors.black,
                                   fontSize: 20,

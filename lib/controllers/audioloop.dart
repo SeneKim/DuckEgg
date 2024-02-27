@@ -18,10 +18,10 @@ class _CallingPage2State extends State<CallingPage2> {
   String _wordsSpoken = "";
 
   // Commuication Variables
-  final String chatroomID = "65cda35223f8190950c4a7d4";
+  final String chatroomID = "65dbfa9c083a7274d573cf5f";
   String? taskID;
   bool doingDia = true;
-  bool doingAns = false;
+  bool doingAns = true;
 
   @override
   void initState() {
@@ -38,12 +38,11 @@ class _CallingPage2State extends State<CallingPage2> {
   Future<void> _startListening() async {
     await _speechToText.listen(
       onResult: _onSpeechResult,
-      pauseFor: Duration(milliseconds: 3450),
+      pauseFor: Duration(milliseconds: 4200),
       localeId: 'ko-KR',
     );
-    await Future.delayed(Duration(milliseconds: 1200));
-    _speechToText.changePauseFor(Duration(milliseconds: 2250));
-
+    await Future.delayed(Duration(milliseconds: 2000));
+    _speechToText.changePauseFor(Duration(milliseconds: 2200));
     setState(() {});
   }
 
@@ -51,12 +50,16 @@ class _CallingPage2State extends State<CallingPage2> {
     await _speechToText.stop();
     setState(() {
       doingAns = false;
+      doingDia = false;
     });
   }
 
   void _onSpeechResult(result) async {
     setState(() {
       _wordsSpoken = result.recognizedWords;
+      print(
+          "1: ${result.recognizedWords}, ${DateTime.now().toIso8601String()}");
+      print("2: $_wordsSpoken, ${DateTime.now().toIso8601String()}");
     });
   }
 
@@ -67,25 +70,32 @@ class _CallingPage2State extends State<CallingPage2> {
     required String statusURL,
     required String answerURL,
   }) async {
+    String sendText = "";
     int count = 0;
-    doingDialog = true;
     while (doingDialog) {
       await _startListening();
-      Future.delayed(Duration(milliseconds: 50));
+      Future.delayed(Duration(milliseconds: 20));
 
       while (_speechToText.isListening) {
         await Future.delayed(Duration(milliseconds: 10));
       }
-      dynamic postResult = await postTask(createURL, chatroomID, _wordsSpoken);
+      sendText = _wordsSpoken;
+      await Future.delayed(Duration(microseconds: 50));
+      print(
+          "직전: $_wordsSpoken, $sendText, ${DateTime.now().toIso8601String()}");
+      dynamic postResult = await postTask(createURL, chatroomID, sendText);
+      print("post 직후, $sendText, ${DateTime.now().toIso8601String()}");
       setState(() {
         taskID = postResult;
         _wordsSpoken = "";
       });
-
+      sendText = "";
+      print("$postResult, ${DateTime.now().toIso8601String()}");
       count = 0;
       doing = true;
 
       while (doing) {
+        print("${DateTime.now().toIso8601String()}");
         dynamic taskStatus = await getStatus(statusURL, taskID);
         int len = taskStatus['len'];
 
@@ -105,16 +115,16 @@ class _CallingPage2State extends State<CallingPage2> {
         if (taskStatus['task_status'] == 'done' && (count == len)) {
           doing = false;
         }
-        await Future.delayed(Duration(milliseconds: 250));
+        await Future.delayed(Duration(milliseconds: 150));
       }
     }
   }
 
   @override
   Widget build(BuildContext context) {
-    const String createURL = "http://172.30.1.88:8000/api/user/task/create";
-    const String statusURL = "http://172.30.1.88:8000/api/user/task/status";
-    const String answerURL = "http://172.30.1.88:8000/api/user/task/answer";
+    const String createURL = "http://192.168.10.58:8000/api/user/task/create";
+    const String statusURL = "http://192.168.10.58:8000/api/user/task/status";
+    const String answerURL = "http://192.168.10.58:8000/api/user/task/answer";
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,

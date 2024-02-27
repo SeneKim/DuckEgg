@@ -15,8 +15,8 @@ List<BottomNavigationBarItem> navbarItems = <BottomNavigationBarItem>[
     backgroundColor: const Color(0xFF8F8F8F),
   ),
   BottomNavigationBarItem(
-    activeIcon: Badge(child: SvgPicture.asset('assets/icons/paper_sel.svg')),
-    icon: Badge(child: SvgPicture.asset('assets/icons/paper.svg')),
+    activeIcon: SvgPicture.asset('assets/icons/paper_sel.svg'),
+    icon: SvgPicture.asset('assets/icons/paper.svg'),
     label: 'My Story',
     backgroundColor: const Color(0xFF8F8F8F),
   ),

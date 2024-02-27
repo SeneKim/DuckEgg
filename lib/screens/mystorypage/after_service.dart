@@ -9,7 +9,7 @@ class AfterService extends StatelessWidget {
     return Scaffold(
       body: Container(
         width: 360.w,
-        height: 745.75.h,
+        height: 742.h,
         clipBehavior: Clip.antiAlias,
         decoration: const BoxDecoration(
           color: Colors.white,
@@ -17,8 +17,8 @@ class AfterService extends StatelessWidget {
         child: Stack(
           children: [
             Positioned(
-              left: 20.w,
-              top: 40.h,
+              left: 40.w,
+              top: 64.h,
               child: Image.asset("assets/images/mainlogo.png"),
             ),
             Positioned(
@@ -64,7 +64,7 @@ class AfterService extends StatelessWidget {
               width: 360.w,
               height: 600.h,
               left: 0,
-              top: 57.h,
+              top: 90.h,
               child: Center(
                 child: Column(
                   children: [
@@ -80,10 +80,10 @@ class AfterService extends StatelessWidget {
                       ),
                     ),
                     const SizedBox(
-                      height: 150,
+                      height: 130,
                     ),
                     Container(
-                      height: 350,
+                      height: 340,
                       margin: const EdgeInsets.symmetric(horizontal: 30),
                       child: SingleChildScrollView(
                         scrollDirection: Axis.horizontal,
@@ -108,34 +108,37 @@ class AfterService extends StatelessWidget {
                                     )
                                   ],
                                 ),
-                                child: const Column(
+                                child: Column(
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
                                     Text(
                                       "상조 업체 찾아보기",
                                       style: TextStyle(
                                           fontSize: 24,
-                                          fontWeight: FontWeight.w900,
+                                          fontWeight: FontWeight.w700,
                                           height: 1.0),
                                       textAlign: TextAlign.center,
+                                    ),
+                                    SizedBox(
+                                      height: 5.h,
                                     ),
                                     Text(
                                       "View Funeral\nCompany",
                                       style: TextStyle(
                                           color: Colors.black38,
                                           fontSize: 20,
-                                          fontWeight: FontWeight.w900,
+                                          fontWeight: FontWeight.w700,
                                           height: 1),
                                       textAlign: TextAlign.center,
                                     ),
                                     SizedBox(
-                                      height: 20,
+                                      height: 10.h,
                                     ),
                                     Text(
                                       "장례를 위해 꼭 필요한 상조회사\n어떤 회사의 서비스가 존재하는지 알려드려요.",
                                       style: TextStyle(
                                           color: Color(0xFF47415B),
-                                          fontSize: 12,
+                                          fontSize: 14,
                                           fontWeight: FontWeight.bold,
                                           height: 1.5),
                                       textAlign: TextAlign.center,
@@ -166,34 +169,37 @@ class AfterService extends StatelessWidget {
                                     )
                                   ],
                                 ),
-                                child: const Column(
+                                child: Column(
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
                                     Text(
                                       "장례 안내",
                                       style: TextStyle(
                                           fontSize: 24,
-                                          fontWeight: FontWeight.w900,
+                                          fontWeight: FontWeight.w700,
                                           height: 1.0),
                                       textAlign: TextAlign.center,
+                                    ),
+                                    SizedBox(
+                                      height: 5.h,
                                     ),
                                     Text(
                                       "About Funeral",
                                       style: TextStyle(
                                           color: Colors.black38,
                                           fontSize: 20,
-                                          fontWeight: FontWeight.w900,
+                                          fontWeight: FontWeight.w700,
                                           height: 1),
                                       textAlign: TextAlign.center,
                                     ),
                                     SizedBox(
-                                      height: 20,
+                                      height: 10.h,
                                     ),
                                     Text(
                                       "현대에 진행되는\n다양한 장례 방식에 대해 알려드려요.",
                                       style: TextStyle(
                                           color: Color(0xFF47415B),
-                                          fontSize: 12,
+                                          fontSize: 14,
                                           fontWeight: FontWeight.bold,
                                           height: 1.5),
                                       textAlign: TextAlign.center,
@@ -222,34 +228,37 @@ class AfterService extends StatelessWidget {
                                     )
                                   ],
                                 ),
-                                child: const Column(
+                                child: Column(
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
                                     Text(
                                       "장기 기증 서약서 작성",
                                       style: TextStyle(
                                           fontSize: 24,
-                                          fontWeight: FontWeight.w900,
+                                          fontWeight: FontWeight.w700,
                                           height: 1.0),
                                       textAlign: TextAlign.center,
+                                    ),
+                                    SizedBox(
+                                      height: 5.h,
                                     ),
                                     Text(
                                       "Donation",
                                       style: TextStyle(
                                           color: Colors.black38,
                                           fontSize: 20,
-                                          fontWeight: FontWeight.w900,
+                                          fontWeight: FontWeight.w700,
                                           height: 1),
                                       textAlign: TextAlign.center,
                                     ),
                                     SizedBox(
-                                      height: 20,
+                                      height: 10.h,
                                     ),
                                     Text(
                                       "응급 환자에게\n내가 새로운 삶을 줄 수 있어요.",
                                       style: TextStyle(
-                                          color: Colors.black38,
-                                          fontSize: 12,
+                                          color: Color(0xFF47415B),
+                                          fontSize: 14,
                                           fontWeight: FontWeight.bold,
                                           height: 1.5),
                                       textAlign: TextAlign.center,
@@ -278,32 +287,41 @@ class AfterService extends StatelessWidget {
                                     )
                                   ],
                                 ),
-                                child: const Column(
+                                child: Column(
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
                                     Text(
-                                      "추후 서비스 확장 예정",
+                                      "연명의료의향서 작성",
                                       style: TextStyle(
                                           fontSize: 24,
-                                          fontWeight: FontWeight.w900,
+                                          fontWeight: FontWeight.w700,
                                           height: 1.0),
                                       textAlign: TextAlign.center,
                                     ),
                                     SizedBox(
-                                      height: 20,
+                                      height: 5.h,
                                     ),
                                     Text(
-                                      "더 다양한 서비스를 기대해주세요!",
+                                      "Advance directives",
+                                      style: TextStyle(
+                                          color: Colors.black38,
+                                          fontSize: 20,
+                                          fontWeight: FontWeight.w700,
+                                          height: 1),
+                                      textAlign: TextAlign.center,
+                                    ),
+                                    SizedBox(
+                                      height: 10.h,
+                                    ),
+                                    Text(
+                                      "임종 환자가 되었을 때를 대비하여 스스로\n 연명 치료에 관한 의사를 작성할 수 있어요.",
                                       style: TextStyle(
                                           color: Color(0xFF47415B),
-                                          fontSize: 12,
+                                          fontSize: 14,
                                           fontWeight: FontWeight.bold,
                                           height: 1.5),
                                       textAlign: TextAlign.center,
                                     ),
-                                    SizedBox(
-                                      width: 30,
-                                    )
                                   ],
                                 )),
                           ],

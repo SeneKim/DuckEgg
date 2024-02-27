@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hummingbird/controllers/audioloop.dart';
 import 'package:hummingbird/controllers/completion_beforeUI.dart';
+import 'package:hummingbird/controllers/dialog_page.dart';
 import 'package:hummingbird/controllers/download_voice.dart';
 import 'package:hummingbird/controllers/test2voice.dart';
 import 'package:hummingbird/navigation/app.dart';
