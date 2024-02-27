@@ -249,7 +249,7 @@ class DailyQuestionPage extends StatelessWidget {
                                   const BorderRadius.all(Radius.circular(25)),
                               child: const Qlist(
                                 questionNumber: 1,
-                                question: "가족끼리 자주 여행가던 장소가 있나..",
+                                question: "10년 동안 한 음식만 먹는다면, 어..",
                               ),
                             ),
                             const SizedBox(height: 10),

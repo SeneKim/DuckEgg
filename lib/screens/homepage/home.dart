@@ -14,7 +14,7 @@ class MainHomePage extends StatelessWidget {
         Positioned(child: Image.asset("assets/images/Home_Image.png")),
         Positioned(
           left: 222.w,
-          top: 520.h,
+          top: 539.h,
           child: AvatarGlow(
               glowRadiusFactor: 0.3,
               child: InkWell(
