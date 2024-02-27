@@ -85,12 +85,12 @@ class SettingPage extends StatelessWidget {
                             decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(20),
                                 image: const DecorationImage(
-                                    image:
-                                        AssetImage('assets/images/namgil.png'),
+                                    image: AssetImage(
+                                        'assets/images/non_profile.png'),
                                     fit: BoxFit.cover)),
                           ),
                           const Text(
-                            '김 남 길',
+                            '김 세 희',
                             textAlign: TextAlign.center,
                             style: TextStyle(
                               color: Colors.black,

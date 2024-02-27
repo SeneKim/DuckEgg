@@ -75,7 +75,7 @@ class _MemoirPageState extends State<MemoirPage> {
                 width: 360.w,
                 height: 1440.h,
                 clipBehavior: Clip.antiAlias,
-                decoration: ShapeDecoration(
+                decoration: const ShapeDecoration(
                   color: Colors.white,
                   shape: RoundedRectangleBorder(
                     side: BorderSide(width: 2, color: Color(0xFFEDEEFF)),
@@ -207,7 +207,7 @@ class _MemoirPageState extends State<MemoirPage> {
                                 SizedBox(
                                   height: 10.h,
                                 ),
-                                Text(
+                                const Text(
                                   "Q. 가족과의 추억 중 가장 기억에 남는 것은\n  무엇인가요?",
                                   style: TextStyle(
                                     fontSize: 18,
@@ -218,7 +218,7 @@ class _MemoirPageState extends State<MemoirPage> {
                                   textAlign: TextAlign.start,
                                 ),
                                 Padding(
-                                  padding: EdgeInsets.only(
+                                  padding: const EdgeInsets.only(
                                     left: 4,
                                   ),
                                   child: TextField(
@@ -230,7 +230,7 @@ class _MemoirPageState extends State<MemoirPage> {
                                         builder: (BuildContext context) {
                                           return AlertDialog(
                                             title: const Text('저장'),
-                                            content: Text('입력을 완료하시겠어요?'),
+                                            content: const Text('입력을 완료하시겠어요?'),
                                             actions: <Widget>[
                                               TextButton(
                                                 onPressed: () {
@@ -248,179 +248,10 @@ class _MemoirPageState extends State<MemoirPage> {
                                     onChanged: (text) {
                                       _saveText(text);
                                     },
-                                    style: TextStyle(
+                                    style: const TextStyle(
                                       fontSize: 14.0,
                                     ),
-                                    decoration: InputDecoration(
-                                      border: InputBorder.none,
-                                    ),
-                                    textInputAction: TextInputAction.done,
-                                  ),
-                                ),
-                              ]),
-                        ),
-                      ),
-                    ),
-                    Positioned(
-                      left: 20.w,
-                      top: 590.h,
-                      child: Container(
-                        width: 320.w,
-                        height: 400.h,
-                        decoration: BoxDecoration(
-                          boxShadow: [
-                            BoxShadow(
-                              color: Colors.grey.withOpacity(0.7),
-                              spreadRadius: 0,
-                              blurRadius: 5,
-                              offset: const Offset(
-                                  0, 5), // changes position of shadow
-                            ),
-                          ],
-                          color: Colors.white,
-                          border: Border.all(
-                              color: const Color(0xFF321C71).withOpacity(0.4),
-                              width: 2.5),
-                          borderRadius: BorderRadius.circular(8),
-                        ),
-                        child: SingleChildScrollView(
-                          child: Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              children: [
-                                SizedBox(
-                                  height: 10.h,
-                                ),
-                                Text(
-                                  "Q. 당신은 현재의 삶에 만족하시나요?",
-                                  style: TextStyle(
-                                    fontSize: 18,
-                                    fontWeight: FontWeight.bold,
-                                    fontFamily: "Inter",
-                                    color: Color(0xFF321C71),
-                                  ),
-                                  textAlign: TextAlign.start,
-                                ),
-                                Padding(
-                                  padding: EdgeInsets.only(
-                                    left: 4,
-                                  ),
-                                  child: TextField(
-                                    controller: inputController2,
-                                    onSubmitted: (String value) async {
-                                      await showDialog<void>(
-                                        context: context,
-                                        builder: (BuildContext context) {
-                                          return AlertDialog(
-                                            title: const Text('저장'),
-                                            content: Text('입력을 완료하시겠어요?'),
-                                            actions: <Widget>[
-                                              TextButton(
-                                                onPressed: () {
-                                                  Navigator.pop(context);
-                                                },
-                                                child: const Text('예'),
-                                              ),
-                                            ],
-                                          );
-                                        },
-                                      );
-                                    },
-                                    //keyboardType: TextInputType.emailAddress,
-                                    maxLines: null,
-                                    onChanged: (text) {
-                                      setState(() {
-                                        _saveText2(text);
-                                      });
-                                    },
-                                    style: TextStyle(
-                                      fontSize: 16.0,
-                                    ),
-                                    decoration: InputDecoration(
-                                      border: InputBorder.none,
-                                    ),
-                                    textInputAction: TextInputAction.done,
-                                  ),
-                                ),
-                              ]),
-                        ),
-                      ),
-                    ),
-                    Positioned(
-                      left: 20.w,
-                      top: 1010.h,
-                      child: Container(
-                        width: 320.w,
-                        height: 400.h,
-                        decoration: BoxDecoration(
-                          boxShadow: [
-                            BoxShadow(
-                              color: Colors.grey.withOpacity(0.7),
-                              spreadRadius: 0,
-                              blurRadius: 5,
-                              offset: const Offset(
-                                  0, 5), // changes position of shadow
-                            ),
-                          ],
-                          color: Colors.white,
-                          border: Border.all(
-                              color: const Color(0xFF321C71).withOpacity(0.4),
-                              width: 2.5),
-                          borderRadius: BorderRadius.circular(8),
-                        ),
-                        child: SingleChildScrollView(
-                          child: Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              children: [
-                                SizedBox(
-                                  height: 10,
-                                ),
-                                Text(
-                                  "Q. 당신은 10대에 어떤 사람이었나요?",
-                                  style: TextStyle(
-                                    fontSize: 18,
-                                    fontWeight: FontWeight.bold,
-                                    fontFamily: "Inter",
-                                    color: Color(0xFF321C71),
-                                  ),
-                                  textAlign: TextAlign.start,
-                                ),
-                                Padding(
-                                  padding: EdgeInsets.only(
-                                    left: 4,
-                                  ),
-                                  child: TextField(
-                                    keyboardType: TextInputType.text,
-                                    controller: inputController3,
-                                    onSubmitted: (String value) async {
-                                      await showDialog<void>(
-                                        context: context,
-                                        builder: (BuildContext context) {
-                                          return AlertDialog(
-                                            title: const Text('저장'),
-                                            content: Text('입력을 완료하시겠어요?'),
-                                            actions: <Widget>[
-                                              TextButton(
-                                                onPressed: () {
-                                                  Navigator.pop(context);
-                                                },
-                                                child: const Text('예'),
-                                              ),
-                                            ],
-                                          );
-                                        },
-                                      );
-                                    },
-                                    //keyboardType: TextInputType.emailAddress,
-                                    maxLines: null,
-                                    onChanged: (text) {
-                                      _saveText3(text);
-                                    },
-                                    style: TextStyle(
-                                      fontSize: 18.0,
-                                    ),
-                                    decoration: InputDecoration(
+                                    decoration: const InputDecoration(
                                       border: InputBorder.none,
                                     ),
                                     textInputAction: TextInputAction.done,

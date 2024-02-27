@@ -169,7 +169,7 @@ class DailyQuestionPage extends StatelessWidget {
                 child: Center(
                   child: Column(
                     children: [
-                      Text(
+                      const Text(
                         '오늘의 질문\nDaily Question',
                         textAlign: TextAlign.center,
                         style: TextStyle(
@@ -180,10 +180,10 @@ class DailyQuestionPage extends StatelessWidget {
                           height: 0,
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 42,
                       ),
-                      Text(
+                      const Text(
                         'DAILY QUESTION',
                         textAlign: TextAlign.center,
                         style: TextStyle(
@@ -198,7 +198,7 @@ class DailyQuestionPage extends StatelessWidget {
                       SizedBox(
                         height: 28.h,
                       ),
-                      Text(
+                      const Text(
                         '가족끼리 자주 여행가던 장소가 있나요?\n그곳에선 무엇을 했나요?',
                         textAlign: TextAlign.center,
                         style: TextStyle(
@@ -244,112 +244,12 @@ class DailyQuestionPage extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.start,
                           children: [
                             InkWell(
-                              onTap: () => toDailyQuesToday11(context),
-                              borderRadius:
-                                  const BorderRadius.all(Radius.circular(25)),
-                              child: const Qlist(
-                                questionNumber: 11,
-                                question: "어릴적 꿈이 있으셨나요? 그 꿈을..",
-                              ),
-                            ),
-                            const SizedBox(height: 10),
-                            InkWell(
-                              onTap: () => toDailyQuesToday10(context),
-                              borderRadius:
-                                  const BorderRadius.all(Radius.circular(25)),
-                              child: const Qlist(
-                                questionNumber: 10,
-                                question: "딸이 만약 바퀴벌레로 변한다면  ..",
-                              ),
-                            ),
-                            const SizedBox(height: 10),
-                            InkWell(
-                              onTap: () => toDailyQuesToday9(context),
-                              borderRadius:
-                                  const BorderRadius.all(Radius.circular(25)),
-                              child: const Qlist(
-                                questionNumber: 9,
-                                question: "당신은 지금 하는 일에 대해 어느..",
-                              ),
-                            ),
-                            const SizedBox(height: 10),
-                            InkWell(
-                              onTap: () => toDailyQuesToday8(context),
-                              borderRadius:
-                                  const BorderRadius.all(Radius.circular(25)),
-                              child: const Qlist(
-                                questionNumber: 8,
-                                question: "사람들이 당신을 어떤 사람으로 기..",
-                              ),
-                            ),
-                            const SizedBox(height: 10),
-                            InkWell(
-                              onTap: () => toDailyQuesToday7(context),
-                              borderRadius:
-                                  const BorderRadius.all(Radius.circular(25)),
-                              child: const Qlist(
-                                questionNumber: 7,
-                                question: "중고등학생 때 좋아했던 사람이  ..",
-                              ),
-                            ),
-                            const SizedBox(height: 10),
-                            InkWell(
-                              onTap: () => toDailyQuesToday6(context),
-                              borderRadius:
-                                  const BorderRadius.all(Radius.circular(25)),
-                              child: const Qlist(
-                                questionNumber: 6,
-                                question: "당신은 엄마와 아빠의 모습 중 누..",
-                              ),
-                            ),
-                            const SizedBox(height: 10),
-                            InkWell(
-                              onTap: () => toDailyQuesToday5(context),
-                              borderRadius:
-                                  const BorderRadius.all(Radius.circular(25)),
-                              child: const Qlist(
-                                questionNumber: 5,
-                                question: "당신의 인생 영화는 무엇인가요? ..",
-                              ),
-                            ),
-                            const SizedBox(height: 10),
-                            InkWell(
-                              onTap: () => toDailyQuesToday4(context),
-                              borderRadius:
-                                  const BorderRadius.all(Radius.circular(25)),
-                              child: const Qlist(
-                                questionNumber: 4,
-                                question: "당신의 버킷리스트를 3가지만 알..",
-                              ),
-                            ),
-                            const SizedBox(height: 10),
-                            InkWell(
-                              onTap: () => toDailyQuesToday3(context),
-                              borderRadius:
-                                  const BorderRadius.all(Radius.circular(25)),
-                              child: const Qlist(
-                                questionNumber: 3,
-                                question: "최근에 누군가에게 사과했던 일이..",
-                              ),
-                            ),
-                            const SizedBox(height: 10),
-                            InkWell(
-                              onTap: () => toDailyQuesToday2(context),
-                              borderRadius:
-                                  const BorderRadius.all(Radius.circular(25)),
-                              child: const Qlist(
-                                questionNumber: 2,
-                                question: "힘들 때 위로가 되는 노래가 있나..",
-                              ),
-                            ),
-                            const SizedBox(height: 10),
-                            InkWell(
                               onTap: () => toDailyQuesToday1(context),
                               borderRadius:
                                   const BorderRadius.all(Radius.circular(25)),
                               child: const Qlist(
                                 questionNumber: 1,
-                                question: "10년 동안 한 음식만 먹는다면, 어..",
+                                question: "가족끼리 자주 여행가던 장소가 있나..",
                               ),
                             ),
                             const SizedBox(height: 10),

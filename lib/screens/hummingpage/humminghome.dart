@@ -20,7 +20,7 @@ class HummingHomePage extends StatefulWidget {
 class _HummingHomePageState extends State<HummingHomePage> {
   @override
   Widget build(BuildContext context) {
-    final String chatRoomIDURL = "api/user/chatroom";
+    const String chatRoomIDURL = "api/user/chatroom";
     return SingleChildScrollView(
       child: Container(
         width: 360.w,
@@ -184,7 +184,7 @@ class _HummingHomePageState extends State<HummingHomePage> {
                             children: [
                               InkWell(
                                   child: const Window(
-                                    name: "김세희",
+                                    name: "김남길",
                                   ),
                                   onDoubleTap: () async {
                                     Navigator.of(context).push(
@@ -197,8 +197,8 @@ class _HummingHomePageState extends State<HummingHomePage> {
                                     showDialog(
                                         context: context,
                                         builder: (BuildContext context) {
-                                          return Calling(
-                                            buttonText: "김 세 희",
+                                          return const Calling(
+                                            buttonText: "김 남 길",
                                             freindID:
                                                 "65c8807fa626b03071683914",
                                           );
@@ -209,7 +209,7 @@ class _HummingHomePageState extends State<HummingHomePage> {
                               ),
                               InkWell(
                                   child: const Window(
-                                    name: "김종수",
+                                    name: "이채은",
                                   ),
                                   onDoubleTap: () async {
                                     Navigator.of(context).push(
@@ -222,8 +222,8 @@ class _HummingHomePageState extends State<HummingHomePage> {
                                     showDialog(
                                         context: context,
                                         builder: (BuildContext context) {
-                                          return Calling(
-                                            buttonText: "김 종 수",
+                                          return const Calling(
+                                            buttonText: "이 채 은",
                                             freindID:
                                                 "65c87f8a6e43249408531466",
                                           );
@@ -235,107 +235,6 @@ class _HummingHomePageState extends State<HummingHomePage> {
                       ),
                       SizedBox(
                         height: 40.h,
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Row(
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: [
-                              InkWell(
-                                  child: const Window(
-                                    name: "송성근",
-                                  ),
-                                  onDoubleTap: () async {
-                                    Navigator.of(context).push(
-                                      MaterialPageRoute(
-                                          builder: (_) => SplashScreen()),
-                                    );
-                                    await Future.delayed(
-                                        const Duration(seconds: 3));
-                                    Navigator.of(context).pop();
-                                    showDialog(
-                                        context: context,
-                                        builder: (BuildContext context) {
-                                          return Calling(
-                                            buttonText: "송 성 근",
-                                            freindID:
-                                                "65c880b5a626b03071683915",
-                                          );
-                                        });
-                                  }),
-                              SizedBox(
-                                width: 50.w,
-                              ),
-                              InkWell(
-                                  child: const Window(
-                                    name: "전윤찬",
-                                  ),
-                                  onDoubleTap: () async {
-                                    Navigator.of(context).push(
-                                      MaterialPageRoute(
-                                          builder: (_) => SplashScreen()),
-                                    );
-                                    await Future.delayed(
-                                        const Duration(seconds: 3));
-                                    Navigator.of(context).pop();
-                                    showDialog(
-                                        context: context,
-                                        builder: (BuildContext context) {
-                                          return Calling(
-                                            buttonText: "전 윤 찬",
-                                            freindID:
-                                                "65c87ef24c83dc6f24180234",
-                                          );
-                                        });
-                                  }),
-                            ],
-                          ),
-                        ],
-                      ),
-                      SizedBox(
-                        height: 40.h,
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Row(
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: [
-                              InkWell(
-                                  child: const Window(
-                                    name: "황승현",
-                                  ),
-                                  onDoubleTap: () async {
-                                    Navigator.of(context).push(
-                                      MaterialPageRoute(
-                                          builder: (_) => SplashScreen()),
-                                    );
-                                    await Future.delayed(
-                                        const Duration(seconds: 3));
-                                    Navigator.of(context).pop();
-                                    showDialog(
-                                        context: context,
-                                        builder: (BuildContext context) {
-                                          return Calling(
-                                            buttonText: "황 승 현",
-                                            freindID:
-                                                "65c88050a626b03071683913",
-                                          );
-                                        });
-                                  }),
-                              SizedBox(
-                                width: 50.w,
-                              ),
-                              InkWell(
-                                child: Window(
-                                  name: "\nnew friend",
-                                  // 새 친구 만드는 페이지 만들기!!!!!!
-                                ),
-                              ),
-                            ],
-                          ),
-                        ],
                       ),
                     ]),
               ),

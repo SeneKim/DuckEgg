@@ -87,7 +87,7 @@ class MyStoryHomePage extends StatelessWidget {
                 left: 42.w,
                 top: 96.h,
                 child: const Text(
-                  '김남길님, 안녕하세요 \n나를 기록해 보아요',
+                  '김세희님, 안녕하세요 \n나를 기록해 보아요',
                   style: TextStyle(
                     color: Color(0xFF40405C),
                     fontSize: 14,
@@ -181,7 +181,7 @@ class MyStoryHomePage extends StatelessWidget {
                                 SizedBox(
                                   height: 14.h,
                                 ),
-                                Text(
+                                const Text(
                                   'My Story Page',
                                   style: TextStyle(
                                     color: Color(0xFFEEF1FF),
@@ -195,8 +195,8 @@ class MyStoryHomePage extends StatelessWidget {
                                 SizedBox(
                                   height: 12.h,
                                 ),
-                                Text(
-                                  '여기서 김남길님의 이야기를 들려주세요!',
+                                const Text(
+                                  '여기서 김세희님의 이야기를 들려주세요!',
                                   style: TextStyle(
                                     color: Color(0xFF40405C),
                                     fontSize: 18,
@@ -319,17 +319,17 @@ class MyStoryHomePage extends StatelessWidget {
               ),
               Positioned(
                 left: 255.w,
-                top: 62.h,
+                top: 55.h,
                 child: Container(
-                  height: 75.h,
-                  width: 75.w,
+                  height: 80.h,
+                  width: 80.w,
                   padding: const EdgeInsets.only(right: 0.25, bottom: 0.11),
                   clipBehavior: Clip.antiAlias,
                   decoration: const BoxDecoration(
                       shape: BoxShape.circle,
                       image: DecorationImage(
                           fit: BoxFit.cover,
-                          image: AssetImage('assets/images/namgil.png'))),
+                          image: AssetImage('assets/images/non_profile.png'))),
                 ),
               ),
 
