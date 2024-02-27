@@ -61,7 +61,7 @@ class DailyQuestionPage extends StatelessWidget {
                         top: 0,
                         child: Container(
                           width: 332.w,
-                          height: 413.h,
+                          height: 350.h,
                           decoration:
                               const BoxDecoration(color: Color(0xFFB1B2FF)),
                         ),
@@ -99,30 +99,22 @@ class DailyQuestionPage extends StatelessWidget {
                       Positioned(
                         left: 115.w,
                         top: 146.h,
-                        child: SizedBox(
-                          width: 100.w,
-                          height: 30.h,
-                          child: Positioned(
-                            left: 24.w,
-                            top: 3.h,
-                            child: ElevatedButton(
-                              onPressed: () => toDailyQuesToday(context),
-                              style: ElevatedButton.styleFrom(
-                                  backgroundColor: Colors.white,
-                                  shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(30),
-                                  ),
-                                  minimumSize: const Size(100, 20),
-                                  alignment: Alignment.center,
-                                  padding: const EdgeInsets.all(5)),
-                              child: const Text(
-                                "작성하기",
-                                style: TextStyle(
-                                  color: Colors.black,
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 15,
-                                ),
+                        child: ElevatedButton(
+                          onPressed: () => toDailyQuesToday(context),
+                          style: ElevatedButton.styleFrom(
+                              backgroundColor: Colors.white,
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(30),
                               ),
+                              minimumSize: const Size(100, 20),
+                              alignment: Alignment.center,
+                              padding: const EdgeInsets.all(5)),
+                          child: const Text(
+                            "작성하기",
+                            style: TextStyle(
+                              color: Colors.black,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 15,
                             ),
                           ),
                         ),

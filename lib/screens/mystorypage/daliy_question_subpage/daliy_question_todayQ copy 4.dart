@@ -267,7 +267,7 @@ class _TodayQuestionPage4 extends State<TodayQuestionPage4> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Text(
-                              '당신의 버킷리스트를 3가지만 알려주세요.\n선정하신 이유도 함께 적어주세요!',
+                              '당신의 버킷리스트를 3가지만 알려주\n세요. 선정하신 이유도 함께 적어주세요!',
                               style: TextStyle(
                                   color: Colors.black,
                                   fontSize: 20,

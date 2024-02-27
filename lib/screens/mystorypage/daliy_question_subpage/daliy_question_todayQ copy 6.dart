@@ -267,7 +267,7 @@ class _TodayQuestionPage6 extends State<TodayQuestionPage6> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Text(
-                              '당신은 엄마와 아빠의 모습 중 어떤\n모습을 각각 닮았나요?',
+                              '당신은 엄마와 아빠의 모습 중 누구의\n어떤 모습을 각각 닮았나요?',
                               style: TextStyle(
                                   color: Colors.black,
                                   fontSize: 20,

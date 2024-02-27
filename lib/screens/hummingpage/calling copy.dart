@@ -13,17 +13,17 @@ import 'dart:async';
 
 import 'package:speech_to_text/speech_to_text.dart';
 
-class Calling extends StatefulWidget {
+class Calling2 extends StatefulWidget {
   final String buttonText;
   final String freindID;
-  const Calling({Key? key, required this.buttonText, required this.freindID})
+  const Calling2({Key? key, required this.buttonText, required this.freindID})
       : super(key: key);
 
   @override
-  State<Calling> createState() => _CallingState();
+  State<Calling2> createState() => _CallingState2();
 }
 
-class _CallingState extends State<Calling> {
+class _CallingState2 extends State<Calling2> {
   //timer
   Timer? _timer;
   int _elapsedSeconds = 0;
@@ -55,6 +55,9 @@ class _CallingState extends State<Calling> {
 
   // STT Variables
   SpeechToText _speechToText = SpeechToText();
+  SpeechListenOptions options = SpeechListenOptions(
+    autoPunctuation: true,
+  );
   bool _speechEnabled = false;
   String _wordsSpoken = "";
 
@@ -78,6 +81,7 @@ class _CallingState extends State<Calling> {
       onResult: _onSpeechResult,
       pauseFor: Duration(milliseconds: 4250),
       localeId: 'ko-KR',
+      listenOptions: options,
     );
     await Future.delayed(Duration(milliseconds: 2000));
     _speechToText.changePauseFor(Duration(milliseconds: 2200));
@@ -290,7 +294,6 @@ class _CallingState extends State<Calling> {
                     onTap: () async {
                       await _stopListening();
                       doingDia = false;
-                      await Future.delayed(Duration(microseconds: 100));
                       Navigator.of(context).pop();
                     },
                     child: Container(

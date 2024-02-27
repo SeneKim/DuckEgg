@@ -267,7 +267,7 @@ class _TodayQuestionPage1 extends State<TodayQuestionPage1> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Text(
-                              '10년 동안 한 음식만 먹을 수 있다면 어떤\n음식을 먹고 싶은가요? 이유도 같이 말씀\n해주세요!',
+                              '10년 동안 한 음식만 먹을 수 있다면\n어떤 음식을 먹고 싶은가요? 이유도 같이\n말씀 해주세요!',
                               style: TextStyle(
                                   color: Colors.black,
                                   fontSize: 20,

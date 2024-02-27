@@ -267,7 +267,7 @@ class _TodayQuestionPage7 extends State<TodayQuestionPage7> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Text(
-                              '중고등학생 때 좋아했던 사람이 있나요?\n그 사람이 왜 좋았나요?',
+                              '중고등학생 때 좋아했던 사람이 있나요?\n좋아했던 이유는 무엇인가요?',
                               style: TextStyle(
                                   color: Colors.black,
                                   fontSize: 20,
